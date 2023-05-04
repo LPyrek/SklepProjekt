@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepProjekt", "SklepProjekt\SklepProjekt.csproj", "{D77BC3AC-A006-4A50-A853-85D09F00D6F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SklepProjekt.Tests", "SklepProjekt.Tests\SklepProjekt.Tests.csproj", "{A360FD69-266B-47B0-A5AC-5B865009507D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D77BC3AC-A006-4A50-A853-85D09F00D6F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77BC3AC-A006-4A50-A853-85D09F00D6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77BC3AC-A006-4A50-A853-85D09F00D6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77BC3AC-A006-4A50-A853-85D09F00D6F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A360FD69-266B-47B0-A5AC-5B865009507D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A360FD69-266B-47B0-A5AC-5B865009507D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A360FD69-266B-47B0-A5AC-5B865009507D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A360FD69-266B-47B0-A5AC-5B865009507D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {444ADF57-BF9A-41BA-B3FD-8F18A9C6C65C}
+	EndGlobalSection
+EndGlobal
