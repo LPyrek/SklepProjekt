@@ -1,0 +1,52 @@
+﻿@model SklepProjekt.Models.Zamowienie
+
+<h2>Edytuj zamówienie</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+            @Html.LabelFor(model => model.ID_klienta, "Klient", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.ID_klienta, ViewBag.ID_klienta as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ID_klienta, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+            @Html.LabelFor(model => model.Data_Zamowienia, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Data_Zamowienia, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Data_Zamowienia, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+            @Html.LabelFor(model => model.ID_produktu, "Produkt", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.ID_produktu, ViewBag.ID_produktu as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ID_produktu, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+            @Html.LabelFor(model => model.Ilosc, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Ilosc, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ilosc, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+            @Html.LabelFor(model => model.Status_Zamowienia, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Status_Zamowienia, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Status_Zamowienia, "", new { @class = "text-danger" })
+    </div>
+
+    <!--ukryte pola-->
+    <input type="hidden" name="ID_klienta" value="@Model.ID_klienta" />
+    <input type="hidden" name="ID_produktu" value="@Model.ID_produktu" />
+    <input type="hidden" name="ID_Zamowienia" value="@Model.ID_Zamowienia" />
+
+    <div class="form-group">
+        <input type="submit" value="Zapisz" class="btn btn-primary" />
+        @Html.ActionLink("Anuluj", "Index", null, new { @class = "btn btn-secondary" })
+    </div>
+}
+
+
+
+

@@ -1,0 +1,30 @@
+﻿@model SklepProjekt.Models.Produkt
+
+<h2>Szczegóły produktu</h2>
+
+<table class="table">
+    <tr>
+        <th>Id Produktu</th>
+        <td>@Model.ID_produktu</td>
+    </tr>
+    <tr>
+        <th>Nazwa produktu</th>
+        <td>@Model.Nazwa_produktu</td>
+    </tr>
+    <tr>
+        <th>Opis</th>
+        <td>@Model.Opis</td>
+    </tr>
+    <tr>
+        <th>Cena</th>
+        <td>@Model.Cena</td>
+    </tr>
+    <tr>
+        <th>Dostępna ilość</th>
+        <td>@Model.Dostępna_ilość</td>
+    </tr>
+</table>
+
+<div class="form-actions">
+    @Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn btn-primary" })
+</div>

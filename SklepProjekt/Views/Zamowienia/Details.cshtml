@@ -1,0 +1,42 @@
+﻿@model SklepProjekt.Models.Zamowienie
+
+<h2>Detale Zamówienia</h2>
+
+<table class="table">
+    <tr>
+        <th>Id Zamówienia</th>
+        <td>@Model.ID_Zamowienia</td>
+    </tr>
+    <tr>
+        <th>ID Klienta</th>
+        <td>@Model.Klient.ID_klienta</td>
+    </tr>
+    <tr>
+        <th>ID produktu</th>
+        <td>@Model.Produkt.ID_produktu</td>
+    </tr>
+    <tr>
+        <th>Klient</th>
+        <td>@Model.Klient.Imie @Model.Klient.Nazwisko</td>
+    </tr>
+    <tr>
+        <th>Produkt</th>
+        <td>@Model.Produkt.Nazwa_produktu</td>
+    </tr>
+    <tr>
+        <th>Ilość</th>
+        <td>@Model.Ilosc</td>
+    </tr>
+    <tr>
+        <th>Data Zamówienia</th>
+        <td>@Model.Data_Zamowienia</td>
+    </tr>
+    <tr>
+        <th>Status Zamówienia</th>
+        <td>@Model.Status_Zamowienia</td>
+    </tr>
+</table>
+
+<div class="form-actions">
+    @Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn btn-primary" })
+</div>

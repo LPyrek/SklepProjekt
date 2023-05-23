@@ -1,0 +1,43 @@
+﻿@model SklepProjekt.Models.Zamowienie
+
+<h2>Usuń Zamówienie</h2>
+
+<div class="alert alert-danger">
+    Czy na pewno chcesz usunąć to zamówienie?
+</div>
+<table class="table">
+    <tr>
+        <th>Id Zamówienia</th>
+        <td>@Model.ID_Zamowienia</td>
+    </tr>
+    <tr>
+        <th>Klient</th>
+        <td>@Model.Klient.Imie @Model.Klient.Nazwisko</td>
+    </tr>
+    <tr>
+        <th>Produkt</th>
+        <td>@Model.Produkt.Nazwa_produktu</td>
+    </tr>
+    <tr>
+        <th>Ilosc</th>
+        <td>@Model.Ilosc</td>
+    </tr>
+    <tr>
+        <th>Data Zamówienia</th>
+        <td>@Model.Data_Zamowienia</td>
+    </tr>
+    <tr>
+        <th>Status Zamówienia</th>
+        <td>@Model.Status_Zamowienia</td>
+    </tr>
+</table>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions">
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        @Html.ActionLink("Anuluj", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+}

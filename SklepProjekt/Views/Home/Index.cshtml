@@ -1,31 +1,72 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Sklep sportowy - Home";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        h1{
+            font-family: Arial, sans-serif; /* Wybierz preferowaną czcionkę. Jeśli nie jest dostępna, użyje się domyślnej czcionki sans-serif */
+            font-size: 70px; /* Ustaw wielkość czcionki */
+            color: #000000; /* Ustaw kolor tekstu */
+            text-align: center; /* Ustawienie wyśrodkowania tekstu. Możesz użyć również 'left' lub 'right' */
+            margin-top: 0px; /* Ustawienie marginesu górnego */
+            margin-bottom: 80px; /* Ustawienie marginesu dolnego */
+        }
+        
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        .btn {
+            margin: 10px;
+            padding: 40px 80px;
+            font-size: 22px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+            .btn::before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.3);
+                transform: perspective(1000px) rotateX(-90deg);
+                transition: transform 0.3s ease;
+                pointer-events: none;
+            }
+
+            .btn:hover {
+                transform: translateY(-5px);
+            }
+
+                .btn:hover::before {
+                    transform: perspective(1000px) rotateX(0deg);
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Sklep sportowy </h1>
+        <div>
+            <a href="@Url.Action("Index","Produkty" )" class="btn">Produkty</a>
+            <a href="@Url.Action("Index","Klienci")" class="btn">Klienci</a>
+            <a href="@Url.Action("Index","Zamowienia")" class="btn">Zamówienia</a>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</body>
+</html>
+

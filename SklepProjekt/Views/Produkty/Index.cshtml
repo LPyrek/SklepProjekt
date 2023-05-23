@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SklepProjekt.Models.Produkt>
+
+<h2>Lista produktów</h2>
+
+<p>
+    <a href="@Url.Action("Create")">Dodaj nowy produkt</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>ID produktu</th>
+        <th>Nazwa produktu</th>
+        <th>Cena</th>
+        <th>Dostępna ilość</th>
+        <th></th>
+    </tr>
+
+    @foreach (var produkt in Model)
+    {
+        <tr>
+            <td>@produkt.ID_produktu</td>
+            <td>@produkt.Nazwa_produktu</td>
+            <td>@produkt.Cena</td>
+            <td>@produkt.Dostępna_ilość</td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = produkt.ID_produktu })">Edytuj</a> |
+                <a href="@Url.Action("Details", new { id = produkt.ID_produktu })">Szczegóły</a> |
+                <a href="@Url.Action("Delete", new { id = produkt.ID_produktu })">Usuń</a>
+            </td>
+        </tr>
+    }
+</table>

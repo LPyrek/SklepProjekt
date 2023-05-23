@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SklepProjekt.Models.Zamowienie>
+
+<h2>Lista zamówień</h2>
+
+<p>
+    @Html.ActionLink("Nowe zamówienie", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>ID zamówienia</th>
+        <th>Klient</th>
+        <th>Produkt</th>
+        <th>Ilosc</th>
+        <th>Data zamówienia</th>
+        <th></th>
+    </tr>
+    @foreach (var zamowienie in Model)
+    {
+        <tr>
+            <td>@zamowienie.ID_Zamowienia</td>
+            <td>@zamowienie.Klient.Imie @zamowienie.Klient.Nazwisko</td>
+            <td>@zamowienie.Produkt.Nazwa_produktu</td>
+            <td>@zamowienie.Ilosc</td>
+            <td>@zamowienie.Data_Zamowienia.ToShortDateString()</td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = zamowienie.ID_Zamowienia })">Edytuj</a> |
+                <a href="@Url.Action("Details", new { id = zamowienie.ID_Zamowienia })">Szczegóły</a> |
+                <a href="@Url.Action("Delete", new { id = zamowienie.ID_Zamowienia })">Usuń</a>
+            </td>
+        </tr>
+    }
+</table>
