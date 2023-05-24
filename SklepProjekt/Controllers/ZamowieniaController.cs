@@ -98,10 +98,10 @@ public class ZamowieniaController : Controller
     {
         if (ModelState.IsValid)
         {
-            var existingZamowienie = db.Zamowienia.Find(zamowienie.ID_Zamowienia); // Znajdź istniejące zamówienie w bazie danych
+            var existingZamowienie = db.Zamowienia.Find(zamowienie.ID_Zamowienia);
             if (existingZamowienie != null)
             {
-                db.Entry(existingZamowienie).CurrentValues.SetValues(zamowienie); // Zaktualizuj wartości istniejącego zamówienia z wartościami z edytowanego zamówienia
+                db.Entry(existingZamowienie).CurrentValues.SetValues(zamowienie); 
 
                 try
                 {
@@ -109,8 +109,8 @@ public class ZamowieniaController : Controller
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    db.Entry(existingZamowienie).Reload(); // Odśwież zamówienie z bazą danych
-                    db.SaveChanges(); // Zapisz ponownie
+                    db.Entry(existingZamowienie).Reload(); 
+                    db.SaveChanges(); 
                 }
                 return RedirectToAction("Index");
             }
