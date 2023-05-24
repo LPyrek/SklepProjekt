@@ -12,5 +12,9 @@ namespace SklepProjekt.Controllers
         {
             return View();
         }
+
+     
     }
 }
+
+

@@ -1,0 +1,315 @@
+﻿
+@{
+    ViewBag.Title = "Dokumentacja";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Dokumentacja</title>
+    <style>
+        /* Stylizacja strony */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #555;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #666;
+            margin-top: 30px;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            background-color: #f7f7f7;
+            padding: 2px 4px;
+            color: #555;
+        }
+
+        .note {
+            background-color: #dff0d8;
+            border: 1px solid #d6e9c6;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .warning {
+            background-color: #f2dede;
+            border: 1px solid #ebccd1;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .diagram {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .model-container {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f7f7f7;
+        }
+
+            .model-container h2 {
+                margin-top: 0;
+                font-size: 18px;
+                color: #333;
+            }
+
+        .model-item {
+            margin-bottom: 10px;
+        }
+
+            .model-item label {
+                font-weight: bold;
+                display: inline-block;
+                width: 120px;
+            }
+
+            .model-item span {
+                display: inline-block;
+                color: #666;
+            }
+
+    </style>
+</head>
+<body>
+    <h1>Dokumentacja</h1>
+
+    <h2>Cel projektu</h2>
+    <p>
+        Nasz projekt zakłada stworzenie aplikacji webowej opartej na platformie .NET z wykorzystaniem Entity Framework, która będzie służyć obsłudze sklepu sportowego specjalizującego się w produktach do sztuk walki.
+
+        Celem naszego projektu jest rozwinięcie naszych umiejętności oraz skuteczna praca grupowa nad tym ambitnym przedsięwzięciem.
+
+        Aplikacja, którą tworzymy, będzie dedykowana dla pracowników obsługujących sklep. Zapewni im narzędzia umożliwiające dodawania produktów, klientów oraz zamówień.
+
+        Praca zespołowa nad projektem pozwoli nam na efektywną współpracę, wymianę wiedzy i doświadczenia oraz skoncentrowanie się na różnych aspektach aplikacji.
+
+        Jesteśmy pełni entuzjazmu i zaangażowania w tworzenie kompleksowej aplikacji webowej dla obsługi sklepu sportowego. Dzięki wykorzystaniu platformy .NET i Entity Framework jesteśmy przekonani, że dostarczymy wysokiej jakości rozwiązanie, które spełni oczekiwania osób zarządzających sklepem i ułatwi im prowadzenie biznesu.
+    </p>
+
+    <h2>Zastosowanie biznesowe</h2>
+    <p>
+        Nasza aplikacja webowa, stworzona dla obsługi sklepu sportowego specjalizującego się w produktach do sztuk walki, ma istotne zastosowanie biznesowe.
+        Oto kilka kluczowych zastosowań biznesowych naszej aplikacji:
+
+    </p>
+
+    <ul>
+        <li>
+            <strong>1:</strong> Skuteczne zarządzanie produktami: Aplikacja umożliwia pracownikom sklepu dodawanie, edycję i usuwanie produktów.
+            Dzięki temu można skutecznie zarządzać asortymentem, aktualizować informacje o produktach, a także śledzić dostępność i stan magazynowy
+        </li>
+
+        <li>
+            <strong>2:</strong> Obsługa klientów: Aplikacja zapewnia narzędzia do obsługi klientów, umożliwiając tworzenie i zarządzanie profilami klientów, monitorowanie historii zamówień oraz świadczenie spersonalizowanej obsługi.
+            To pomaga w budowaniu trwałych relacji z klientami i zwiększaniu ich lojalności.
+        </li>
+
+        <li>
+            <strong>3:</strong> Usprawnienie procesów biznesowych: Aplikacja webowa pomaga w automatyzacji procesów biznesowych sklepu, takich jak zarządzanie asortymentem, obsługa zamówień, śledzenie płatności itp.
+            Dzięki temu czas i wysiłek pracowników są efektywnie wykorzystywane, co zwiększa produktywność i poprawia efektywność operacyjną.
+        </li>
+    </ul>
+
+    <h2>Kontrolery</h2>
+    <p>Projekt składa się z następujących kontrolerów:</p>
+    <ul>
+        <li>
+            <strong>KlienciController:</strong>
+
+
+            <p>- Metoda "Index" (GET): Pobiera listę wszystkich klientów z bazy danych i przekazuje ją do widoku "Index" w celu wyświetlenia.</p>
+            <p>- Metoda "Details" (GET): Przyjmuje identyfikator klienta jako parametr i wyświetla szczegółowe informacje na temat tego klienta, jeśli istnieje w bazie danych.</p>
+            <p>- Metoda "Create" (GET): Wyświetla formularz umożliwiający tworzenie nowego klienta.</p>
+            <p>- Metoda "Create" (POST): Przyjmuje obiekt klienta jako parametr, dodaje go do kontekstu bazy danych i zapisuje zmiany. Następnie przekierowuje użytkownika do widoku "Index".</p>
+            <p>- Metoda "Edit" (GET): Przyjmuje identyfikator klienta jako parametr i wyświetla formularz umożliwiający edycję informacji o tym kliencie.</p>
+            <p>- Metoda "Edit" (POST): Przyjmuje zmodyfikowany obiekt klienta jako parametr, ustawia jego stan na zmodyfikowany i zapisuje zmiany w bazie danych. Następnie przekierowuje użytkownika do widoku "Index".</p>
+            <p>- Metoda "Delete" (GET): Przyjmuje identyfikator klienta jako parametr i wyświetla potwierdzenie usunięcia tego klienta.</p>
+            <p>- Metoda "DeleteConfirmed" (POST): Potwierdza usunięcie klienta o podanym identyfikatorze. Usuwa klienta z bazy danych i zapisuje zmiany. Następnie przekierowuje użytkownika do widoku "Index".</p>
+            <p>- Metoda "Dispose": Przesłania metodę bazową Dispose w celu zwolnienia zasobów. W tym przypadku, gdy disposing jest true, zostaje wywołana metoda Dispose kontekstu bazy danych.</p>
+
+        </li>
+        <li>
+            <strong>ZamowieniaController:</strong>
+            <p>- Metoda "Index" (GET): Pobiera listę wszystkich zamówień z bazy danych i przekazuje ją do widoku "Index" w celu wyświetlenia.</p>
+            <p>- Metoda "Details" (GET): Przyjmuje identyfikator zamówienia jako parametr i wyświetla szczegółowe informacje na temat tego zamówienia, jeśli istnieje w bazie danych.</p>
+            <p>- Metoda "Create" (GET): Wyświetla formularz umożliwiający tworzenie nowego zamówienia. Dodatkowo, pobiera listę klientów i produktów z bazy danych i przekazuje je do widoku jako ViewBag, aby umożliwić wybór odpowiednich opcji w formularzu.</p>
+            <p>- Metoda "Create" (POST): Przyjmuje obiekt zamówienia jako parametr, dodaje go do kontekstu bazy danych i zapisuje zmiany. Następnie przekierowuje użytkownika do widoku "Index". Jeśli model state nie jest poprawny, ponownie pobiera listę klientów i produktów z bazy danych i przekazuje je do widoku jako ViewBag, aby umożliwić wyświetlenie poprawnych opcji w formularzu.</p>
+            <p>- Metoda "Edit" (GET): Przyjmuje identyfikator zamówienia jako parametr i wyświetla formularz umożliwiający edycję informacji o tym zamówieniu. Dodatkowo, pobiera listę klientów i produktów z bazy danych i przekazuje je do widoku jako ViewBag, aby umożliwić wybór odpowiednich opcji w formularzu.</p>
+            <p>- Metoda "Edit" (POST): Przyjmuje zmodyfikowany obiekt zamówienia jako parametr. Znajduje istniejące zamówienie w bazie danych, a następnie aktualizuje jego wartości z wartościami z edytowanego zamówienia. Próbuje zapisać zmiany w bazie danych, a jeśli wystąpi wyjątek DbUpdateConcurrencyException, ponownie odświeża zamówienie z bazą danych i zapisuje je ponownie. Następnie przekierowuje użytkownika do widoku "Index". Jeśli model state nie jest poprawny, ponownie pobiera listę klientów i produktów z bazy danych i przekazuje je do widoku jako ViewBag, aby umożliwić wyświetlenie poprawnych opcji w formularzu.</p>
+            <p>- Metoda "Delete" (GET): Przyjmuje identyfikator zamówienia jako parametr i wyświetla potwierdzenie usunięcia tego zamówienia.</p>
+            <p>- Metoda "DeleteConfirmed" (POST): Potwierdza usunięcie zamówienia>
+        <li>
+            <strong>ProduktyController:</strong>
+            <p>Kontroler ZamowienieController jest klasą dziedziczącą po klasie Controller z przestrzeni nazw System.Web.Mvc. Odpowiada za obsługę żądań dotyczących operacji na zamówieniach w sklepie internetowym.</p>
+            <p>Kontroler ProduktyController jest klasą dziedziczącą po klasie Controller z przestrzeni nazw System.Web.Mvc. Odpowiada za obsługę żądań dotyczących operacji na produktach w sklepie internetowym.</p>
+            <p>Kontroler ma dostęp do kontekstu bazy danych SklepContext, który został zainicjalizowany w polu db. Wykorzystuje ten kontekst do komunikacji z bazą danych.</p>
+            <p>- Metoda Index(): Obsługuje żądanie GET na adres /Produkty i zwraca widok zawierający listę wszystkich produktów. Pobiera wszystkie produkty z bazy danych za pomocą metody ToList() i przekazuje je do widoku.</p>
+            <p>- Metoda Details(int? id): Obsługuje żądanie GET na adres /Produkty/Details/{id} i zwraca widok zawierający szczegóły produktu o określonym identyfikatorze id. Sprawdza, czy podany identyfikator jest prawidłowy. Jeśli nie, zwraca kod odpowiedzi HTTP 400 (BadRequest). Następnie wyszukuje produkt o podanym identyfikatorze w bazie danych za pomocą metody Find(id). Jeśli nie znajduje takiego produktu, zwraca kod odpowiedzi HTTP 404 (HttpNotFound). W przeciwnym razie zwraca widok szczegółów produktu.</p>
+            <p>- Metoda Create(): Obsługuje żądanie GET na adres /Produkty/Create i zwraca widok formularza do tworzenia nowego produktu.</p>
+            <p>- Metoda Create(Produkt produkt): Obsługuje żądanie POST na adres /Produkty/Create i jest wywoływana po zatwierdzeniu formularza utworzenia nowego produktu. Sprawdza, czy przesłane dane formularza są poprawne za pomocą ModelState.IsValid. Jeśli dane są poprawne, dodaje nowy produkt do bazy danych za pomocą metody Add(produkt) i zapisuje zmiany za pomocą SaveChanges(). Następnie przekierowuje użytkownika do metody Index() w celu wyświetlenia zaktualizowanej listy produktów. Jeśli dane formularza są niepoprawne, zwraca widok formularza wraz z błędami.</p>
+            <p>- Metoda Edit(int? id): Obsługuje żądanie GET na adres /Produkty/Edit/{id} i zwraca widok formularza edycji produktu o określonym identyfikatorze id. Sprawdza, czy podany identyfikator jest prawidłowy. Jeśli nie, zwraca kod odpowiedzi HTTP 400 (BadRequest). Następnie wyszukuje produkt o podanym identyfikatorze w bazie danych za pomocą metody Find(id). Jeśli nie znajduje takiego produktu, zwraca kod odpowiedzi HTTP 404 (HttpNotFound). W przeciwnym razie zwraca widok formularza edycji produktu.</p>
+            <p>- Metoda Edit(Produkt produkt): Obsługuje żądanie POST na adres /Produkty/Edit/{id} i jest wywoływana po zatwierdzeniu formularza edycji produktu. Sprawdza, czy przesłane dane formularza są poprawne za pomocą ModelState.IsValid. Jeśli dane są poprawne, oznacza produkt jako zmodyfikowany za pomocą db.Entry(produkt).State = EntityState.Modified i zapisuje zmiany w bazie danych za pomocą SaveChanges(). Następnie przekierowuje użytkownika do metody Index() w celu wyświetlenia zaktualizowanej listy produktów. Jeśli dane formularza są niepoprawne, zwraca widok formularza wraz z błędami.</p>
+            <p>- Metoda Delete(int? id): Obsługuje żądanie GET na adres /Produkty/Delete/{id} i zwraca widok potwierdzenia usunięcia produktu o określonym identyfikatorze id. Sprawdza, czy podany identyfikator jest prawidłowy. Jeśli nie, zwraca kod odpowiedzi HTTP 400 (BadRequest). Następnie wyszukuje produkt o podanym identyfikatorze w bazie danych za pomocą metody Find(id). Jeśli nie znajduje takiego produktu, zwraca kod odpowiedzi HTTP 404 (HttpNotFound). W przeciwnym razie zwraca widok potwierdzenia usunięcia produktu.</p>
+            <p>- Metoda DeleteConfirmed(int id): Obsługuje żądanie POST na adres /Produkty/Delete/{id} i jest wywoływana po potwierdzeniu usunięcia produktu. Wyszukuje produkt o podanym identyfikatorze w bazie danych za pomocą metody Find(id), usuwa ten produkt za pomocą metody Remove(produkt) i zapisuje zmiany w bazie danych za pomocą SaveChanges(). Następnie przekierowuje użytkownika do metody Index() w celu wyświetlenia zaktualizowanej listy produktów.</p>
+            <p>- Metoda Dispose(bool disposing): Przesłania metodę Dispose(bool disposing) z klasy bazowej Controller. W przypadku, gdy parametr disposing ma wartość true, zwalnia zasoby zarządzane przez obiekt db poprzez wywołanie metody Dispose().</p>
+        </li>
+
+        <li>
+            <strong> Dokumentacja i Home Controller</strong>
+            <p> Kontroler DokumentacjaController oraz HomeController obsługuje żądanie GET na adres /Dokumentacja lub /Home i zwraca widok strony dokumentacji/home'a.</p>
+
+
+        </li>
+    </ul>
+
+    <!-- Model Produkt -->
+    <h2>Modele</h2>
+    <p>
+        Oto opis poszczególnych modeli:
+
+    </p>
+
+    <ul>
+        <li>
+            <strong>Produkt:</strong>
+            <p>- ID_produktu:  <span>Unikalny identyfikator produktu.</span> </p>
+            <p>- Nazwa_produktu:  <span>Nazwa produktu (wymagane pole).</span> </p>
+            <p>- Opis:  <span>Opis produktu.</span> </p>
+            <p>- Cena:  <span>Cena produktu (wymagane pole)</span> </p>
+
+        </li>
+
+        <li>
+            <strong>Klienci:</strong>
+            <p>- ID_klienta: <span>Klucz główny, identyfikator klienta.</span></p>
+            <p>- Imie: <span>Imię klienta, wymagana wartość.</span></p>
+            <p>- Nazwisko: <span>Nazwisko klienta, wymagana wartość.</span></p>
+            <p>- Adres: <span>Adres klienta, wymagana wartość.</span></p>
+            <p>- Email: <span>Adres e-mail klienta, opcjonalny, musi być poprawny.</span></p>
+            <p>- Numer_telefonu: <span>Numer telefonu klienta, opcjonalny, musi składać się z 9 cyfr.</span></p>
+        </li>
+
+        <li>
+            <strong>Zamówienia</strong>
+            <p>- ID_Zamowienia: <span>Klucz główny, identyfikator zamówienia.</span></p>
+            <p>- ID_klienta: <span>Klucz obcy, identyfikator klienta, powiązanie z tabelą "Klienci", wymagana wartość.</span></p>
+            <p>- ID_produktu: <span>Klucz obcy, identyfikator produktu, powiązanie z tabelą "Produkty", wymagana wartość.</span></p>
+            <p>- Data_Zamowienia: <span>Data zamówienia, wymagana wartość.</span></p>
+            <p>- Status_Zamowienia: <span>Status zamówienia, wymagana wartość.</span></p>
+            <p>- Ilosc: <span>Ilość zamówionego produktu, wymagana wartość.</span></p>
+            <p>- Klient: <span>Powiązanie z modelem Klient (relacja jeden do wielu).</span></p>
+            <p>- Produkt: <span>Powiązanie z modelem Produkt (relacja jeden do wielu).</span></p>
+
+        </li>
+    </ul>
+
+    <h2>Widoki</h2>
+    <p>Projekt zawiera następujące widoki:</p>
+    <ul>
+        <li>
+            <strong>Produkty:</strong>
+            <p>Index: <span>widok odpowiadający za stronę, na której wyświetlane są wszyskie istniejące produkty oraz przyciski odnoszące się do innych powyższych akcji.</span></p>
+            <p>Details: widok odpowiedzialny za wyświetlanie informacji o wybranym produkcie.</p>
+            <p>Create: widok odpowiedzialny za dodawanie nowych produktów, gdzie można wprowadzić wymagane dane o produkcie.</p>
+            <p>Edit: widok odpowiadający za edycję wcześniej wprowadzonych produktów, zawierający wszystkie możliwe do edycji atrybuty.</p>
+            <p>Delete: widok odpowiadający za usuwanie wybranego produktu, razem z potwierdzeniem, czy na pewno chcemy to zrobić.</p>
+        </li>
+        <li><strong>Klienci oraz Zamówienia: </strong> działają analogicznie jak powyższy widok</li>
+        <li>
+            <strong> Shared: </strong>
+            <p>Definicja metatagów: Widok zawiera metatagi definiujące kodowanie znaków, skalowanie strony i tytuł strony.</p>
+
+            <p>Import zasobów: Widok importuje arkusze stylów CSS i skrypty JavaScript za pomocą funkcji Styles.Render i Scripts.Render. Dzięki temu możliwe jest zastosowanie odpowiednich styli i funkcjonalności w aplikacji.</p>
+
+            <p>Pasek nawigacyjny: Widok zawiera pasek nawigacyjny (navbar), który jest statycznie umieszczony na górze strony. Składa się z kontenera (container1), nagłówka (navbar-header) i menu nawigacyjnego (navbar-collapse).</p>
+
+            <p>Logo sklepu: Pasek nawigacyjny zawiera logo sklepu (navbar-brand), które jest klikalne i przekierowuje użytkownika do określonej strony.</p>
+
+            <p>Elementy nawigacyjne: Pasek nawigacyjny zawiera listę elementów nawigacyjnych (nav navbar-nav), które są renderowane za pomocą funkcji Html.ActionLink. Każdy element reprezentuje inny obszar aplikacji i jest połączony z odpowiednim kontrolerem i akcją.</p>
+
+            <p>Treść strony: Treść strony znajduje się w kontenerze container body-content. Ta sekcja jest zarezerwowana dla zawartości specyficznej dla każdej podstrony, która jest renderowana za pomocą funkcji RenderBody.</p>
+
+            <p>Stopka: Widok zawiera stopkę (footer) z informacją o roku i nazwie sklepu.</p>
+
+            <p>Importowanie skryptów: Widok importuje skrypty jQuery i Bootstrap za pomocą funkcji Scripts.Render. Skrypty te dostarczają interaktywności i funkcjonalności dla strony.</p>
+
+            <p>Sekcje skryptów (opcjonalnie): Widok umożliwia renderowanie dodatkowych skryptów w sekcji scripts, jeśli jest to potrzebne dla konkretnej strony. Ta sekcja jest opcjonalna i nie jest wymagana.</p>
+        </li>
+
+        <li>
+            <strong> Home: </strong>
+
+            <p>Ustawienie tytułu strony: Zmienna ViewBag.Title jest ustawiana na wartość "Sklep sportowy - Home", co jest wykorzystywane jako tytuł strony.</p>
+
+            <p>Deklaracja HTML i sekcji head: Widok rozpoczyna się od deklaracji HTML i zawiera sekcję head, gdzie znajdują się metatagi i stylizacja strony.</p>
+
+            <p>Stylizacja nagłówka: Zdefiniowany jest styl dla nagłówka (h1), który jest wyśrodkowany, ma niestandardową czcionkę, rozmiar, kolor oraz marginesy górny i dolny.</p>
+
+            <p>Kontener: Widok zawiera kontener (div o klasie container), który jest wyśrodkowany na stronie i ma margines górny.</p>
+
+            <p>Przyciski: Wewnątrz kontenera znajdują się przyciski (a o klasie btn) reprezentujące różne obszary aplikacji. Każdy przycisk jest klikalny i przekierowuje do określonego kontrolera i akcji za pomocą funkcji Url.Action.</p>
+
+            <p>Stylizacja przycisków: Zdefiniowany jest styl dla przycisków, obejmujący marginesy, wypełnienie, rozmiar czcionki, dekorację tekstu, tło, kolor tekstu, zaokrąglenie rogów oraz animację podczas najechania kursorem (hover).</p>
+
+            <p>Skrypty: Widok nie zawiera żadnych skryptów JavaScript.</p>
+
+            <p>Zawartość body: Zawartość strony znajduje się w sekcji body. Składa się z nagłówka (h1) zawierającego tytuł "Sklep sportowy" oraz kontenera z przyciskami.</p>
+
+        </li>
+    </ul>
+
+    <h2>Baza danych</h2>
+    <p>Baza danych "SklepContext" jest modelem danych reprezentującym sklep internetowy. Zawiera trzy tabele: "Produkty", "Klienci" i "Zamowienia". W modelu zdefiniowane są relacje między tabelami, takie jak wymaganie, że zamówienie musi mieć powiązanego klienta i produkt. Modelem tym zarządza framework Entity Framework, który umożliwia operacje na bazie danych, takie jak dodawanie, usuwanie i pobieranie danych. Poniżej znajduje się diagram bazy danych:</p>
+    <div class="diagram">
+        <img src="https://i.postimg.cc/sDsPCgLr/bazadanych.png" alt="Diagram bazy danych" />
+    </div>
+
+    <h1>Podział pracy w projekcie</h1>
+
+    <h2>Łukasz:</h2>
+    <ul>
+        <li>Łukasz był odpowiedzialny za tworzenie widoków w aplikacji. Oznacza to, że projektował i implementował interfejsy użytkownika. Tworzył układy, przyciski i inne elementy interaktywne, które użytkownicy będą widzieć i z którymi będą działać.</li>
+        <li>Kontrolery: Łukasz zajmował się tworzeniem kontrolerów, które są odpowiedzialne za obsługę żądań użytkowników i wywoływanie odpowiednich działań w aplikacji. To znaczy, że implementował logikę biznesową i przetwarzanie danych na podstawie działań użytkowników.</li>
+        <li>Modele: Łukasz był odpowiedzialny za tworzenie modeli, czyli struktur danych, które reprezentują obiekty w aplikacji. Tworzył klasy, atrybuty i metody, które definiują, jak obiekty będą działać i jak będą przechowywane w bazie danych.</li>
+    </ul>
+
+    <h2>Albert:</h2>
+    <ul>
+        <li>Część graficzna strony: Albert skupiał się na projektowaniu i tworzeniu grafiki, która wchodziła w skład strony internetowej.
+        Zajął się takimi elementami jak logo, buttony i inne elementy wizualne, które nadawały stronie estetyczny wygląd i tworzyły spójną identyfikację wizualną.</li>
+        <li>
+            Dokumentacja: Albert zajmował się tworzeniem dokumentacji projektu. Oznaczało to sporządzanie opisów funkcjonalności, instrukcji obsługi, opisów technicznych i innych materiałów, które pomagały zrozumieć projekt i umożliwiały innym osobom współpracującym zrozumienie kodu i działania aplikacji.
+        </li>
+        <li>Widok dokumentacji: Albert był odpowiedzialny za projektowanie i tworzenie widoku dokumentacji. Czyli tworzył układy stron, stylizację, strukturyzował informacje i tworzył spójny wygląd dla dokumentacji, aby była czytelna i intuicyjna dla użytkowników.</li>
+    </ul>
+
+    <p>
+        Dodatkowo, Łukasz i Albert wspólnie zajęli się tworzeniem bazy danych. Oznacza to, że współpracowali przy projektowaniu struktury bazy danych, tworzeniu tabel, relacji między nimi oraz implementacji funkcjonalności związanych z przechowywaniem i pobieraniem danych z bazy.
+
+        Współpraca między Łukaszem a Albertem polegała na koordynacji ich działań, wymianie informacji. W ten sposób zapewnili efektywne wykorzystanie swoich umiejętności i skoordynowaną pracę nad projektem.
+    </p>
+</body>
+</html>
+
